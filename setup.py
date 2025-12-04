@@ -12,13 +12,13 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
-        (os.path.join('share', package_name), glob('launch.py'))
+        (os.path.join('share', package_name), glob('launch/*.launch.py'))
     ],
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='sitsnk',
     maintainer_email='sitsnk@icloud.com',
-    description='a package for practice',
+    description='ROS2 lesson10 test package',
     license='GPL 3.0 only',
     tests_require=['pytest'],
     entry_points={
