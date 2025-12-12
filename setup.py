@@ -8,20 +8,21 @@ setup(
     packages=[package_name],
     data_files=[
         ('share/ament_index/resource_index/packages',
-            ['resource/' + package_name]),
+         ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+        ('share/' + package_name, ['launch/talk_alarm.launch.py']),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='sitsnk',
     maintainer_email='sitsnk@icloud.com',
-    description='a package for practice',
-    license='GPL 3.0 only',
+    description='ROS2 package for alarm',
+    license='BSD-3-Clause',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
             'talker = mypkg.talker:main',
-             'listener = mypkg.listener:main',
+            'threshold_alarm = mypkg.threshold_alarm:main',
         ],
     },
 )
