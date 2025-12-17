@@ -58,6 +58,14 @@ $ ros2 run mypkg threshold_alarm
  ```text
  [threshold_alarm-2] [INFO] [⋯] [threshold_alarm]: ALERT: value 10 >= threshold 10
  ```
+### しきい値パラメータ
+threshold_alarmノードは，thresholdという整数パラメータを持ちます．
+- デフォルト値：10
+- しきい値を変更して実行する例（15 に変更）
+```bash
+$ ros2 run mypkg threshold_alarm --ros-args -p threshold:=15
+```
+
 
 ## ローンチファイル
 二つのノードをまとめて起動するローンチファイルです
