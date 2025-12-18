@@ -35,7 +35,7 @@ $ ros2 run mypkg talker
 ```
 
 #### 動作
- - /count トピックにstd_msgs/msg/Int16型のメッセージをPublish します．
+ - countup トピックにstd_msgs/msg/Int16型のメッセージをPublish します．
  - 0.5秒ごとに値が1ずつ増えていきます．
  - 送った値はログに出ます．
  ```text
@@ -53,7 +53,7 @@ $ ros2 run mypkg threshold_alarm
 ```
 
 #### 動作：
- - /count トピックからstd_msgs/msg/Int16を受け取ります．
+ - countup トピックからstd_msgs/msg/Int16を受け取ります．
  - 値がしきい値以上になったタイミングで，以下のようなログが出ます．
  ```text
  [threshold_alarm-2] [INFO] [⋯] [threshold_alarm]: ALERT: value 10 >= threshold 10
@@ -89,6 +89,7 @@ $ ros2 launch mypkg talk_alarm.launch.py
 ```
 
 ## テスト
+talkerとthreshold_alarmを起動し，ログにALERTが一度でも出るかどうかをテストします
 ### 実行方法
 ```bash
 $ cd ~/ros2_ws/src/mypkg/test
