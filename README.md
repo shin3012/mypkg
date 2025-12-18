@@ -96,7 +96,7 @@ $ ./test.bash
 ```
 ## 環境
 - 開発環境（ローカル）：ubuntu 20.04 / python 3.8
-- 実行環境(リモート)：GitHub Actions ubuntu-latest / ROS 2 Humble
+- 実行環境(リモート)：GitHub Actions ubuntu-latest / ROS2
 
 
 ## 最後に
