@@ -11,18 +11,15 @@
 
 ## ダウンロードとビルド
 
-ROS2のワークスペース`~/ros2_ws`を使うことを想定しています
+ROS2のワークスペース(例: `~/ros2_ws`)を使うことを想定しています
 
 ```bash
-$ cd ~/ros2_ws/src
+$ cd <your_ws>/src
 $ git clone https://github.com/shin3012/mypkg
-$ cd ~/ros2_ws
+$ cd <your_ws>
 $ colcon build
-```
-ビルド後に環境設定を読み込みます．
-```bash
 $ source /opt/ros/foxy/setup.bash
-$ source ~/ros2_ws/install/setup.bash
+$ source install/setup.bash
 ```
 
 ## ノードとトピック
@@ -35,7 +32,8 @@ $ ros2 run mypkg talker
 ```
 
 #### 動作
- - countup トピックにstd_msgs/msg/Int16型のメッセージをPublish します．
+ - トピック：/countup
+ - メッセージ型：/std_msgs/msg/Int16
  - 0.5秒ごとに値が1ずつ増えていきます．
  - 送った値はログに出ます．
  ```text
@@ -53,7 +51,8 @@ $ ros2 run mypkg threshold_alarm
 ```
 
 #### 動作：
- - countup トピックからstd_msgs/msg/Int16を受け取ります．
+ - トピック：/countup
+ - メッセージ型：/std_msgs/msg/Int16
  - 値がしきい値以上になったタイミングで，以下のようなログが出ます．
  ```text
  [threshold_alarm-2] [INFO] [⋯] [threshold_alarm]: ALERT: value 10 >= threshold 10
@@ -88,17 +87,8 @@ $ ros2 launch mypkg talk_alarm.launch.py
 [threshold_alarm-2] [INFO] [⋯] [threshold_alarm]: ALERT: value 10 >= threshold 10
 ```
 
-## テスト
-talkerとthreshold_alarmを起動し，ログにALERTが一度でも出るかどうかをテストします
-### 実行方法
-```bash
-$ cd ~/ros2_ws/src/mypkg/test
-$ ./test.bash
-```
-## 環境
-- 開発環境（ローカル）：ubuntu 20.04 / python 3.8
-- 実行環境(リモート)：GitHub Actions ubuntu-latest / ROS2
-
+## 動作確認環境
+ - Ubuntu 20.04 + ROS 2 Foxy + Python 3.8
 
 ## 最後に
 - このソフトウェアパッケージは，BSD 3-Clause ライセンスの下，再頒布および使用が許可されます.
